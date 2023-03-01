@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+mkdir -p build
+cd build
+# export CC=/usr/bin/gcc-9
+# export CXX=/usr/bin/g++-9
+command cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. \
+    && cd .. && ln -sf ./build/compile_commands.json && cd build
+
